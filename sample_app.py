@@ -1,3 +1,4 @@
+from sys import argv
 import bottle
 import beaker.middleware
 from bottle import route, redirect, post, run, request, hook
@@ -269,4 +270,4 @@ def on_realtime_callback():
         except subscriptions.SubscriptionVerifyError:
             print("Signature mismatch")
 
-bottle.run(app=app, host='0.0.0.0', port=8515, reloader=True)
+bottle.run(app=app, host='0.0.0.0', port=argv[1], reloader=True)
