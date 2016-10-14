@@ -269,4 +269,4 @@ def on_realtime_callback():
         except subscriptions.SubscriptionVerifyError:
             print("Signature mismatch")
 
-bottle.run(app=app, host='localhost', port=8515, reloader=True)
+bottle.run(app=app, host='0.0.0.0', port=8515, reloader=True)
