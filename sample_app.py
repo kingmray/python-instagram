@@ -14,8 +14,8 @@ session_opts = {
 app = beaker.middleware.SessionMiddleware(bottle.app(), session_opts)
 
 CONFIG = {
-    'client_id': '<client_id>',
-    'client_secret': '<client_secret>',
+    'client_id': '6f294c4f55f24c288d5f3604d87c8e0d',
+    'client_secret': '4039135461.1677ed0.e5712a65d18a4b79bac9b48aa4636090',
     'redirect_uri': 'http://localhost:8515/oauth_callback'
 }
 
@@ -72,7 +72,7 @@ def on_callback():
 @route('/recent')
 def on_recent():
     content = "<h2>User Recent Media</h2>"
-    access_token = request.session['access_token']
+    access_token = '4039135461.1677ed0.e5712a65d18a4b79bac9b48aa4636090' #request.session['access_token']
     if not access_token:
         return 'Missing Access Token'
     try:
@@ -198,7 +198,7 @@ def user_search():
 
 @route('/user_follows')
 def user_follows():
-    access_token = request.session['access_token']
+    access_token = '4039135461.1677ed0.e5712a65d18a4b79bac9b48aa4636090'#request.session['access_token']
     content = "<h2>User Follows</h2>"
     if not access_token:
         return 'Missing Access Token'
